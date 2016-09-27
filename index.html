@@ -1,0 +1,76 @@
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Angular js search1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    
+    <script>
+      var app;
+        app = angular.module('MyApp',[]);
+        app.controller("MyFriends",function($scope,$http){
+             $http.get("friends.json").then(function(res){
+                $scope.friends = res.data; });
+        });
+    </script>
+    
+</head>
+<body ng-App="MyApp" ng-controller= 'MyFriends'>
+    <p>name:<input type="text" ng-model="sname"></p>
+    <p>{{sname}}</p>
+    <ul>
+        <li ng-repeat="friend in friends" ng-if="friend.Name.match(sname)">
+           {{friend.Name}},{{friend.birth}},{{friend.phone}},{{friend.email}}
+        </li>
+    </ul>
+<script>
+      var app;
+        app = angular.module('MyApp',[]);
+        app.controller("MyFriends",function($scope,$http){
+             $http.get("friends.json").then(function(res){
+                $scope.friends = res.data; });
+        });
+    </script>
+</body>
+</html>-->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Angular js search2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    
+    <script>
+      var app;
+        app = angular.module('MyApp',[]);
+        app.controller("MyFriends",function($scope,$http){
+             $http.get("friends.json").then(function(res){
+                $scope.friends = res.data; });
+        });
+    </script>
+    
+</head>
+<body ng-App="MyApp" ng-controller= 'MyFriends'>
+    <p>name:<input type="text" ng-model="sname"></p>
+    <p>{{sname}}</p>
+    <ul>
+        <li ng-repeat="friend in friends" ng-if="friend.Name.match(sname)">
+           {{friend.Name}}
+           {{friend.birth}}
+           {{friend.phone}}
+           {{friend.email}}
+        </li>
+    </ul>
+<script>
+      var app;
+        app = angular.module('MyApp',[]);
+        app.controller("MyFriends",function($scope,$http){
+             $http.get("friends.json").then(function(res){
+                $scope.friends = res.data; });
+        });
+    </script>
+</body>
+</html>
