@@ -15,26 +15,40 @@
                 $scope.friends = res.data; });
         });
     </script>
-    
+    <style>
+        *{padding:0; margin:0 auto; text-align: center}
+        body{max-width:1020px;}
+    </style>
 </head>
-<body ng-App="MyApp" ng-controller= 'MyFriends'>
+<body ng-App="MyApp" ng-controller= 'MyFriends' class="container">
    <div class="jumbotron">
-   <h2>Angular Js Json Data Search</h2>
-   <p><a href="/join"class="btn btn-primary"><span class="glyphicon glyphicon-user">&nbsp;</span>회원가입</a></p>
+   <h1>Angular Js Json Data Search</h1>
+   <p><a href="/join"class="btn btn-warning "><span class="glyphicon glyphicon-lock">&nbsp;</span>로그인</a>
+   <a href="/join"class="btn btn-warning"><span class="glyphicon glyphicon-user">&nbsp;</span>회원가입</a></p>
     </div>
     <form>
        <div class="form-group">
-                    name:<input type="text" ng-model="sname" class="form-control">
+           <h2>Search Name!!</h2><input name="search" type="text" ng-model="sname" class="form-control">
        </div>
     </form>
-    <p>{{sname}}</p>
+    <h3>{{sname}}</h3>
     <table class="table table-bordered">
+        <thead class="thead-inverse" style="background:#FCC43F; color:#fff">
+        <tr>
+            <th>Name</th>
+            <th>Birth</th>
+            <th>Phone</th>
+            <th>EMail</th>
+        </tr>
+        </thead>
+        <tbody>
         <tr ng-repeat="friend in friends" ng-if="friend.Name.match(sname)">
             <td>{{friend.Name}}</td>
             <td>{{friend.birth}}</td>
             <td>{{friend.phone}}</td>
             <td>{{friend.email}}</td>
         </tr>
+        </tbody>
     </table>
 <script>
       var app;
